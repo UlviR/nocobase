@@ -8,13 +8,13 @@ services:
     networks:
       - nocobase
     environment:
-      - APP_KEY=your-secret-key # Replace it with your own app key
-      - ENCRYPTION_FIELD_KEY=your-secret-key # Replace it with your own app key
+      - APP_KEY=misispzcpk
+      - ENCRYPTION_FIELD_KEY=misispzcpk
       - DB_DIALECT=postgres
       - DB_HOST=postgres
-      - DB_DATABASE=nocobase
-      - DB_USER=nocobase
-      - DB_PASSWORD=nocobase
+      - DB_DATABASE=pzcpk
+      - DB_USER=pzcpk
+      - DB_PASSWORD=pzcpk
     volumes:
       - ./storage:/app/nocobase/storage
     ports:

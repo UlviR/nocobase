@@ -13,6 +13,7 @@ ENV PLUGINS_DIRS=${PLUGINS_DIRS}
 RUN apt-get update && apt-get install -y jq
 WORKDIR /tmp
 COPY . /tmp
+# RUN yarn nocobase install
 RUN  yarn install && yarn build --no-dts
 
 SHELL ["/bin/bash", "-c"]

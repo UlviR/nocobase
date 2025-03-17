@@ -11,12 +11,24 @@ ENV PLUGINS_DIRS=${PLUGINS_DIRS}
 # RUN npx npm-cli-adduser --username test --password test -e test@nocobase.com -r $VERDACCIO_URL
 
 RUN apt-get update && apt-get install -y jq
-WORKDIR /tmp
-COPY . /tmp
+# WORKDIR /tmp
+# COPY . /tmp
 # RUN yarn nocobase install
-RUN  yarn install && yarn build --no-dts
 
-SHELL ["/bin/bash", "-c"]
+# Рабочая директория приложения
+WORKDIR /app
+
+# Убедитесь, что package.json и yarn.lock отдельно копируются (для кэширования)
+COPY package.json yarn.lock /app/
+
+# Копирование исходного кода
+COPY . /app
+RUN  yarn install
+RUN yarn build --no-dts
+
+CMD ["yarn", "dev"]
+
+# SHELL ["/bin/bash", "-c"]
 
 
 # RUN CURRENTVERSION="$(jq -r '.version' lerna.json)" && \

@@ -20,10 +20,7 @@ export const PoweredBy = () => {
   const { token } = useToken();
   const customBrandPlugin: any = usePlugin('@nocobase/plugin-custom-brand');
   const data = useCurrentAppInfo();
-  const urls = {
-    'en-US': 'https://www.nocobase.com',
-    'zh-CN': 'https://www.nocobase.com/cn/',
-  };
+ 
   const style = css`
     text-align: center;
     color: ${token.colorTextDescription};
@@ -40,7 +37,7 @@ export const PoweredBy = () => {
     <div
       className={cx(style, 'nb-brand')}
       dangerouslySetInnerHTML={{
-        __html: parseHTML(customBrandPlugin?.options?.options?.brand || `Разарботано в МИСиС`, { appVersion }),
+        __html: parseHTML(customBrandPlugin?.options?.options?.brand || `Университет МИСИС`, { appVersion }),
       }}
     ></div>
   );

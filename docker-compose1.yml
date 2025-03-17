@@ -2,7 +2,6 @@ version: "3"
 networks:
   nocobase:
     driver: bridge
-
 services:
   postgres:
     image: postgres:16-alpine
@@ -22,12 +21,9 @@ services:
     build:
       dockerfile: Dockerfile
       context: .
-    depends_on:
-      postgres:
-        condition: service_healthy
     networks:
       - nocobase
-    command: ["yarn", "start"]
+    # command: [ "yarn", "start" ]
     working_dir: /app
     env_file: ./.env
     volumes:

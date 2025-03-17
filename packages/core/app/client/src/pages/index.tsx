@@ -19,7 +19,7 @@ export const app = new Application({
     // @ts-ignore
     storagePrefix:
       // @ts-ignore
-      window['__nocobase_api_client_storage_prefix__'] || process.env.API_CLIENT_STORAGE_PREFIX || 'NOCOBASE_',
+      '',
     // @ts-ignore
     baseURL: window['__nocobase_api_base_url__'] || process.env.API_BASE_URL || '/api/',
   },

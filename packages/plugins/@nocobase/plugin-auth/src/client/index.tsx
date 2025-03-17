@@ -50,10 +50,10 @@ export class PluginAuthClient extends Plugin {
       path: '/signin',
       Component: 'SignInPage',
     });
-    this.router.add('auth.signup', {
-      path: '/signup',
-      Component: 'SignUpPage',
-    });
+    // this.router.add('auth.signup', {
+    //   path: '/signup',
+    //   Component: 'SignUpPage',
+    // });
 
     this.app.addComponents({
       AuthLayout,

@@ -87,15 +87,15 @@ const passwordForm: ISchema = {
         },
       },
     },
-    signUp: {
-      type: 'void',
-      'x-component': 'Link',
-      'x-component-props': {
-        to: '{{ signUpLink }}',
-      },
-      'x-content': '{{t("Create an account")}}',
-      'x-visible': '{{ allowSignUp }}',
-    },
+    // signUp: {
+    //   type: 'void',
+    //   'x-component': 'Link',
+    //   'x-component-props': {
+    //     to: '{{ signUpLink }}',
+    //   },
+    //   'x-content': '{{t("Create an account")}}',
+    //   'x-visible': '{{ allowSignUp }}',
+    // },
   },
 };
 export const SignInForm = (props: { authenticator: Authenticator }) => {
@@ -103,7 +103,7 @@ export const SignInForm = (props: { authenticator: Authenticator }) => {
   const authenticator = props.authenticator;
   const { authType, name, options } = authenticator;
   const signUpPages = useSignUpForms();
-  const allowSignUp = signUpPages[authType] && options?.allowSignUp ? true : false;
+  const allowSignUp = false;
   const signUpLink = `/signup?name=${name}`;
 
   const useBasicSignIn = () => {

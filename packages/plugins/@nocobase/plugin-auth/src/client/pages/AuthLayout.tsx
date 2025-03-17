@@ -49,16 +49,19 @@ export function AuthLayout() {
   return (
     <div
       style={{
-        maxWidth: 320,
+        maxWidth: 900,
         margin: '0 auto',
         paddingTop: '20vh',
+        display: 'flex',
+        flexDirection:'column',
+        alignItems: 'center'
       }}
     >
       <div style={{ position: 'fixed', top: '2em', right: '2em' }}>
         <SwitchLanguage />
       </div>
-      <h1 style={{ textAlign: 'center' }}>
-        <ReadPretty.TextArea value={data?.data?.title} />
+      <h1 style={{ textAlign: 'center', width:'900px' }}>
+        <ReadPretty.TextArea value={'ПЛОЩАДКА ПРОЕКТОВ И ЗАДАЧ\n РАЗВИТИЯ ЦИФРОВЫХ ПРОФЕССИОНАЛЬНЫХ КОМПЕТЕНЦИЙ'} />
       </h1>
       <AuthenticatorsContextProvider>
         <Outlet />
